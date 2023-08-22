@@ -1,0 +1,67 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiApp1"
+             x:Class="MauiApp1.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0"
+              Grid.Column="0"
+              Grid.ColumnSpan="2"
+              HorizontalOptions="Fill"
+              VerticalOptions="Fill">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0"
+                  BackgroundColor="Red"
+                  Padding="10">
+                <Label Text="Left" />
+            </Grid>
+
+            <Grid Grid.Column="1"
+                  BackgroundColor="White"
+                  VerticalOptions="Fill">
+                <Button Text="Toggle Panel"
+                        Clicked="Button_OnClicked" />
+            </Grid>
+
+            <Grid Grid.Column="2"
+                  BackgroundColor="Red"
+                  VerticalOptions="Fill">
+                <Label Text="Right" />
+            </Grid>
+        </Grid>
+
+
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              x:Name="leftPanel"
+              BackgroundColor="Pink"
+              Padding="10"
+              IsVisible="false">
+            <Label Text="Left Panel"
+                   TextColor="Black"
+                   VerticalOptions="Center" />
+        </Grid>
+
+        <ScrollView Grid.Column="1"
+                    Grid.Row="1"
+                    BackgroundColor="LIghtGray">
+            <Label Text="Sample Lable"
+                   BackgroundColor="Black"/>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
